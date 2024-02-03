@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Information</h1>
+        <div id="output"></div>
+        <script>
+            const book1 = {
+                isbn: "978-1234567890",
+                name: "JavaScript Basics",
+                authors: ["John Doe", "Jane Smith"],
+                publicationDate: "2022-01-01",
+            };
+            const book2 = {
+                isbn: "978-1234567890",
+                name: "JavaScript Basics",
+                authors: ["John Doe", "Jane Smith"],
+                publicationDate: "2022-01-01",
+            };
+            const book3 = Object.assign({}, book1);
+            const book4 = Object.assign({}, book1);
+
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <pre>
+                    <strong>Book 1:</strong>
+                    ISBN: ${book1.isbn}
+                    Name: ${book1.name}
+                    Authors: ${book1.authors.join(', ')}
+                    Publication Date: ${book1.publicationDate}
+                    <strong>Book 2:</strong>
+                    ISBN: ${book2.isbn}
+                    Name: ${book2.name}
+                    Authors: ${book2.authors.join(', ')}
+                    Publication Date: ${book2.publicationDate}
+                    <strong>Comparison Result:</strong>
+                    ${book1.isbn === book2.isbn ? "Same isbn value, same book." : "Different books."}
+                    <strong>Book 3:</strong>
+                    ISBN: ${book3.isbn}
+                    Name: ${book3.name}
+                    Authors: ${book3.authors.join(', ')}
+                    Publication Date: ${book3.publicationDate}
+                    <strong>Book 4:</strong>
+                    ISBN: ${book4.isbn}
+                    Name: ${book4.name}
+                    Authors: ${book4.authors.join(', ')}
+                    Publication Date: ${book4.publicationDate}
+                    <strong>Identity Comparison Result:</strong>
+                    ${book3 === book4 ? "Same identity." : "Different identity."}
+                </pre>
+            `;
+        </script>
+    </div>
+</body>
+</html>
